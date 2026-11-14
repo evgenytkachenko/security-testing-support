@@ -1,0 +1,11 @@
+{
+  "scope": "bundled fictional loopback fixture only",
+  "mode": "spider plus passive analysis; no activeScan job",
+  "timed_out": false,
+  "exit_code": 0,
+  "report_present": true,
+  "fixture_sha256": "7d8b51b92b40a39247f685b7bae07dad2eb2b98482e557655e62675866560048",
+  "plan_sha256": "4becb64484805efc55981e0b3b6497dc470bed7ed4fb8e9dffcd7719bc05c754",
+  "scanner_version": "2.17.0",
+  "interpretation": "Review logs and report; no security pass inferred. Native Automation Framework exit codes differ from Docker baseline."
+}

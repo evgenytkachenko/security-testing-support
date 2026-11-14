@@ -1,0 +1,12 @@
+{
+  "scanner": "Semgrep CE",
+  "scope": "bundled fictional source only",
+  "rules_sha256": "c21970ef39fc582bf3503ec6d6f8483287eb730f0c1633d059cca1cbb5b67745",
+  "timed_out": false,
+  "exit_code": 0,
+  "scanner_version": "1.185.0",
+  "source_sha256": {
+    "safe_example.py": "c68fdac354b08091a00cafb6a36a996dbd12dcf542c481a18518e9cd7c3cadcf",
+    "unsafe_example.py": "2e6d59c2a0963e10fb5047f8876ed5ee6a3a1fbb276dab80f7a4948696d04f4a"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "product": "Fictional Training Portal",
+  "target_build": "demo-build-2",
+  "scope": {
+    "environment": "isolated fictional fixture",
+    "description": "Example only; no real application tested"
+  },
+  "findings": [
+    {
+      "id": "DEMO-1",
+      "title": "Fictional authorization check finding",
+      "source_ref": "fixture-report-1",
+      "source_type": "manual",
+      "affected_build": "demo-build-1",
+      "severity": "high",
+      "state": "closed_verified",
+      "owner": "Example Engineering Owner",
+      "validation_evidence": [
+        "fixture-validation-1"
+      ],
+      "fix_ref": "fixture-fix-1",
+      "retest": {
+        "result": "passed",
+        "build": "demo-build-2",
+        "reviewer": "Example Security Reviewer",
+        "date": "2026-11-13",
+        "evidence": [
+          "fixture-retest-1"
+        ]
+      }
+    },
+    {
+      "id": "DEMO-2",
+      "title": "Unvalidated fictional static alert",
+      "source_ref": "fixture-report-2",
+      "source_type": "SAST",
+      "affected_build": "demo-build-2",
+      "severity": "unknown",
+      "state": "untriaged"
+    },
+    {
+      "id": "DEMO-3",
+      "title": "Fictional accepted residual risk",
+      "source_ref": "fixture-report-3",
+      "source_type": "DAST",
+      "affected_build": "demo-build-2",
+      "severity": "low",
+      "state": "risk_accepted",
+      "owner": "Example Service Owner",
+      "acceptance": {
+        "approver": "Example Risk Owner",
+        "rationale": "Fictional decision for test coverage only",
+        "scope": "demo-build-2 fixture",
+        "approval_evidence": [
+          "fixture-approval"
+        ],
+        "approved_on": "2026-11-01",
+        "expires": "2026-11-10",
+        "build": "demo-build-2"
+      }
+    }
+  ]
+}

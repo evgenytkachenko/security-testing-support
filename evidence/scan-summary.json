@@ -1,0 +1,61 @@
+{
+  "package_version": "0.2.0",
+  "scope": "Only bundled fictional fixtures; not a real customer application",
+  "sast": {
+    "tool": "Semgrep CE",
+    "version": "1.185.0",
+    "exit_code": 0,
+    "errors": 0,
+    "findings": [
+      {
+        "rule": "demo-python-eval",
+        "fixture_file": "unsafe_example.py",
+        "line": 5
+      },
+      {
+        "rule": "demo-python-shell-true",
+        "fixture_file": "unsafe_example.py",
+        "line": 8
+      }
+    ],
+    "raw_report_sha256": "8d07fcd695b72f4a04b89fd14193e917220b94fcd2584250cee6cd41236afd0e"
+  },
+  "web": {
+    "tool": "ZAP",
+    "version": "2.17.0",
+    "mode": "native Automation Framework spider + passive scan + report",
+    "exit_code": 0,
+    "alerts": [
+      {
+        "pluginid": "10038",
+        "name": "Content Security Policy (CSP) Header Not Set",
+        "scanner_riskcode": "2",
+        "instances": 4
+      },
+      {
+        "pluginid": "10020",
+        "name": "Missing Anti-clickjacking Header",
+        "scanner_riskcode": "2",
+        "instances": 3
+      },
+      {
+        "pluginid": "10036",
+        "name": "Server Leaks Version Information via \"Server\" HTTP Response Header Field",
+        "scanner_riskcode": "1",
+        "instances": 5
+      },
+      {
+        "pluginid": "10021",
+        "name": "X-Content-Type-Options Header Missing",
+        "scanner_riskcode": "1",
+        "instances": 3
+      }
+    ],
+    "raw_report_sha256": "268647d4f295ddbbfded20f1cb98644b7a476559f49f01a8d556392862b70b4f",
+    "limitations": [
+      "No activeScan job",
+      "Packaged add-ons used; update checks disabled for reproducibility",
+      "Docker and Mac execution untested"
+    ]
+  }
+}

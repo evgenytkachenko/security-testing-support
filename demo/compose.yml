@@ -1,0 +1,29 @@
+services:
+  fixture:
+    image: python:3.12-slim
+    command: ["python", "-B", "/app/server.py"]
+    volumes:
+      - ./site:/app:ro
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [scan]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/', timeout=2)"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    command: ["zap-baseline.py", "-t", "http://fixture:8000", "-m", "1", "-T", "2", "-J", "zap.json", "-r", "zap.html"]
+    depends_on:
+      fixture:
+        condition: service_healthy
+    volumes:
+      - ${SCAN_OUTPUT:?Set SCAN_OUTPUT to an empty absolute output directory}:/zap/wrk:rw
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    networks: [scan]
+networks:
+  scan:
+    internal: true

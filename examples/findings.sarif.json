@@ -1,0 +1,1 @@
+{"version":"2.1.0","runs":[{"tool":{"driver":{"name":"FictionalScanner"}},"invocations":[{"executionSuccessful":true}],"results":[{"ruleId":"DEMO-RULE","level":"warning","message":{"text":"Fictional alert only"},"locations":[{"physicalLocation":{"artifactLocation":{"uri":"fictional/source.py"},"region":{"startLine":12}}}]}]}]}

@@ -1,0 +1,11 @@
+rules:
+  - id: demo-python-eval
+    languages: [python]
+    message: Review eval usage; untrusted input may execute code.
+    severity: WARNING
+    pattern: eval(...)
+  - id: demo-python-shell-true
+    languages: [python]
+    message: Review subprocess shell=True; untrusted command input may execute commands.
+    severity: WARNING
+    pattern: subprocess.run(..., shell=True, ...)
